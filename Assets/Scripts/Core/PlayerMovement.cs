@@ -19,6 +19,11 @@ namespace Pigs.Core
         }
         void FixedUpdate()
         {
+            Move();
+        }
+
+        private void Move()
+        {
             if (joystick.Horizontal >= offset || joystick.Horizontal <= -offset)
             {
                 moveInput.x = joystick.Horizontal;

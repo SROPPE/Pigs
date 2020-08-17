@@ -33,14 +33,18 @@ namespace Pigs.Combat
         {
             Vector3 center = new Vector3();
             int count = enteringColliders.Count;
+
             if (!(count == 2 || count == 4)) return;
+
             for (int i = 0; i < count; i++)
             {
                 center += enteringColliders[i].bounds.center;
             }
+
             center /= count;
             center.x = (float)Math.Round(center.x, 3);
             center.y = (float)Math.Round(center.y, 3);
+
             if (!bombGrid.ContainsKey(center))
             {    
                 var bomb = Instantiate(bombPrefab, center, Quaternion.identity);
